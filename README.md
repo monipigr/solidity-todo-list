@@ -17,18 +17,24 @@ It ensures that task management is transparent and immutable, leveraging blockch
 - 📋 **View the full task list**
 - ✅ **Mark a task as completed**
 - 🚫 **Prevent overwriting already completed tasks**
-- 🔍 **Validate task indices to avoid out-of-bounds errors**
+- ❌ **Delete a task (only the owner can)**
+- 🔍 **Filter tasks owned by the user**
+- 🔢 **Count total tasks owned by the user**
+- 📊 **Count completed tasks**
 
 ✔️ Implements **modifiers** to:
 
 - 🔍 **Validate task indices** to avoid out-of-bounds errors
 - 🚫 **Prevent overwriting** already completed tasks
+- 🔐 **Restrict deletion to task owners**
 
 ✔️ Emits **events** for key operations:
 
 - 📌 **Task created**
 - 📖 **Task updated**
+- 🚫 **Task deleted**
 - 📋 **Read the full task list**
+- 🔍 **Filter tasks by owner**
 
 ---
 
@@ -83,6 +89,18 @@ Once deployed, test the functions. Here are some examples:
 - Call **updateIsDoneTask(index)**
 - Ensure that `isDone` is updated to `true`
 - Check the emitted event **readATask(task)**
+
+### ❌ **Delete a Task (Only Owner Can)**
+
+- Call **markTaskAsDeleted(index)**
+- Ensure that `isDeleted` is updated to `true`
+- Ensure that another address cannot delete a not owned task
+- Check the emitted event **readATask(task)**
+
+### 🔢 **Count Tasks Owned by User**
+
+- Call **getUserTasks()**
+- The function returns a `uint256` with the number of tasks owned by `msg.sender`
 
 ---
 
