@@ -16,11 +16,9 @@ It ensures that task management is transparent and immutable, leveraging blockch
 - 👀 **Read a specific task** by index
 - 📋 **View the full task list**
 - ✅ **Mark a task as completed**
-- 🚫 **Prevent overwriting already completed tasks**
 - ❌ **Delete a task (only the owner can)**
 - 🔍 **Filter tasks owned by the user**
-- 🔢 **Count total tasks owned by the user**
-- 📊 **Count completed tasks**
+- 🔢 **Count total tasks owned by the user and completed tasks**
 
 ✔️ Implements **modifiers** to:
 
